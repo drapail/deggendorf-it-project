@@ -20,27 +20,23 @@ app.get("/", (req, res) => {
 
 app.post("/", bodyParser.json(), (req, res) => {
     const userResponse = req.body.user_response;
-    let responseStrategyInstance;
-    const responseStrategy = new ResponseStrategy();
+    let responseStrategy = new ResponseStrategy();
     let userInputParser = new UserInputParser();
     let responseKeywords = userInputParser.parseUserInput(userResponse)
     let questManager = new QuestManager();
     let botResponse;
 
-    if (conversation.hasOngoingConversation()) {
-        responseStrategyInstance = conversation.getStrategyInstance();
-        responseStrategyInstance = responseStrategy.getStrategy(responseKeywords);
-        if (!responseStrategyInstance) {
-            responseStrategyInstance = new BaseResponse();
-        }
-        botResponse = responseStrategyInstance.getAnswer(responseKeywords)
-    } else {
-        responseStrategyInstance = new ResponseStrategy();
-        conversation.setStrategyInstance(responseStrategyInstance)
+    if (conversation.requestCount === 0) {
         let randomQuestPath = questManager.getRandomQuest();
         botResponse = questManager.getQuestIntro(randomQuestPath);
+    } else if (conversation.requestCount >= 1) {
+        responseStrategy = responseStrategy.getStrategy(responseKeywords);
+        if (!responseStrategy) {
+            responseStrategy = new BaseResponse();
+        }
+        botResponse = responseStrategy.getAnswer(responseKeywords)
     }
-
+    conversation.requestCount++;
     res.json({bot_response: botResponse})
 })
 
