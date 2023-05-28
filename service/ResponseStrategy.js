@@ -8,6 +8,22 @@ class ResponseStrategy {
         this.instantiateResponseTypes();
     }
 
+    getKeywordsFromResponseTypes() {
+        const keywords = [];
+
+        const strategiesFolderPath = path.join("/Users/drapail/my_drive/repositories/deggendorf-it-project/responseTypes/impl");
+
+        fs.readdirSync(strategiesFolderPath).forEach((file) => {
+            const strategyFilePath = path.join(strategiesFolderPath, file);
+            const StrategyClass = require(strategyFilePath);
+            const strategyInstance = new StrategyClass();
+            const strategyKeywords = strategyInstance.getKeywords();
+            keywords.push(...strategyKeywords);
+        });
+
+        return keywords;
+    }
+
     instantiateResponseTypes() {
         const strategiesFolderPath = path.join("/Users/drapail/my_drive/repositories/deggendorf-it-project/responseTypes/impl");
 
@@ -23,8 +39,8 @@ class ResponseStrategy {
             });
     }
 
-    getStrategy(keyword) {
-        return this.registry.get(keyword);
+    getStrategy(userInput) {
+        return this.registry.get(userInput);
     }
 }
 
