@@ -4,6 +4,7 @@ const path = require('path');
 class QuestManager {
     constructor() {
         this.availableQuests = this.instantiateQuests();
+        this.currentQuest = null;
     }
 
 
@@ -27,6 +28,24 @@ class QuestManager {
         let fileContent = fs.readFileSync(questPath, 'utf8');
         let jsonData = JSON.parse(fileContent);
         return jsonData["INTRO"];
+    }
+
+    getQuestAction(questPath, action) {
+        let fileContent = fs.readFileSync(questPath, 'utf8');
+        let jsonData = JSON.parse(fileContent);
+        return jsonData[action];
+    }
+
+    setCurrentQuest(quest) {
+        this.currentQuest = quest;
+    }
+
+    getCurrentQuest() {
+        return this.currentQuest;
+    }
+
+    resetCurrentQuest() {
+        this.currentQuest = null;
     }
 }
 

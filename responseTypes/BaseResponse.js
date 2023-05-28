@@ -1,6 +1,6 @@
 class BaseResponse {
     getAnswer(userResponse) {
-        return `Your question: ${userResponse}.\nI don't get it, try rephrasing`;
+        return "I don't get it, try rephrasing";
     }
 }
 

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const BaseResponse = require('../responseTypes/BaseResponse')
+const NothingResponse = require('../responseTypes/impl/NothingResponse')
 
 class ResponseStrategy {
     constructor() {
@@ -39,7 +39,10 @@ class ResponseStrategy {
             });
     }
 
-    getStrategy(userInput) {
+    getResponseType(userInput) {
+        if (!this.registry.has(userInput)) {
+            return new NothingResponse();
+        }
         return this.registry.get(userInput);
     }
 }
