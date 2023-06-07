@@ -5,7 +5,7 @@ class FightResponse extends BaseResponse {
         return ['FIGHT', 'KICK', 'HIT', 'SWORD', 'FIGHTING', 'BAT', 'BATTLE', 'CHALLENGE', 'KILL', 'ATTACK'];
     }
 
-    getAnswer(userResponse) {
+    getQuestActionKeyword(userResponse) {
         return `FIGHT`;
     }
 }

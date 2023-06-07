@@ -5,7 +5,7 @@ class HideResponse extends BaseResponse {
         return ['HIDE', 'COVER', 'DISAPPEAR', 'BEHIND'];
     }
 
-    getAnswer(userResponse) {
+    getQuestActionKeyword(userResponse) {
         return `HIDE`;
     }
 }

@@ -5,7 +5,7 @@ class EscapeResponse extends BaseResponse {
         return ['ESCAPE', 'RUN', 'FLEE', 'LEAVE', 'EXIT', 'OUT', 'AWAY', 'MOVE'];
     }
 
-    getAnswer(userResponse) {
+    getQuestActionKeyword(userResponse) {
         return `ESCAPE`;
     }
 }

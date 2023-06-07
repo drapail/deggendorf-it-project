@@ -5,7 +5,7 @@ class NothingResponse extends BaseResponse {
         return ['NOTHING', "NOT", "KNOW", "DON'T", "DO NOT", "NO", "NOPE", "NEIN"]
     }
 
-    getAnswer(userResponse) {
+    getQuestActionKeyword(userResponse) {
         return `NOTHING`;
     }
 }

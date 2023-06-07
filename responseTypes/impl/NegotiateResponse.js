@@ -5,7 +5,7 @@ class NegotiateResponse extends BaseResponse {
         return ['NEGOTIATE', 'COMMUNICATE', 'SPEAK', 'TALK', 'DISCUSS', 'CONVERSATION', 'CONVERSE', 'DIALOGUE', 'DIPLOMACY', 'DIPLOMATIC', 'PEACE', 'AGREEMENT', 'AGREE', 'COMPROMISE', 'COMPROMISE', 'BARGAIN', 'BARTER'];
     }
 
-    getAnswer(userResponse) {
+    getQuestActionKeyword(userResponse) {
         return `NEGOTIATE`;
     }
 }
