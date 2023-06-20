@@ -1,8 +1,10 @@
 const BaseResponse = require("../BaseResponse")
+const KeywordsFileReader = require("../../service/KeywordsFileReader");
 
 class NegotiateResponse extends BaseResponse {
     getKeywords() {
-        return ['NEGOTIATE', 'COMMUNICATE', 'SPEAK', 'TALK', 'DISCUSS', 'CONVERSATION', 'CONVERSE', 'DIALOGUE', 'DIPLOMACY', 'DIPLOMATIC', 'PEACE', 'AGREEMENT', 'AGREE', 'COMPROMISE', 'COMPROMISE', 'BARGAIN', 'BARTER'];
+        const reader = new KeywordsFileReader('responseTypes/keywords/NegotiateKeywords.txt');
+        return reader.getKeywords();
     }
 
     getQuestActionKeyword(userResponse) {

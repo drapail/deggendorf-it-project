@@ -1,8 +1,10 @@
 const BaseResponse = require("../BaseResponse")
+const KeywordsFileReader = require("../../service/KeywordsFileReader");
 
 class FightResponse extends BaseResponse {
     getKeywords() {
-        return ['FIGHT', 'KICK', 'HIT', 'SWORD', 'FIGHTING', 'BAT', 'BATTLE', 'CHALLENGE', 'KILL', 'ATTACK'];
+        const reader = new KeywordsFileReader('responseTypes/keywords/FightKeywords.txt');
+        return reader.getKeywords();
     }
 
     getQuestActionKeyword(userResponse) {

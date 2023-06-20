@@ -1,8 +1,10 @@
 const BaseResponse = require("../BaseResponse")
+const KeywordsFileReader = require("../../service/KeywordsFileReader");
 
 class NothingResponse extends BaseResponse {
     getKeywords() {
-        return ['NOTHING', "NOT", "KNOW", "DON'T", "DO NOT", "NO", "NOPE", "NEIN"]
+        const reader = new KeywordsFileReader('responseTypes/keywords/NothingKeywords.txt');
+        return reader.getKeywords();
     }
 
     getQuestActionKeyword(userResponse) {
