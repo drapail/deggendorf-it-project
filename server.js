@@ -7,8 +7,12 @@ const UserInputParser = require("./service/UserInputParser")
 const QuestManager = require("./service/QuestManager")
 const BaseResponse = require("./responseTypes/BaseResponse");
 const BotAnswer = require("./model/BotAnswer");
+
 const conversation = new Conversation();
 const questManager = new QuestManager();
+const responseStrategy = new ResponseStrategy();
+const userInputParser = new UserInputParser();
+
 
 app.listen(8080, () => {
     console.log("Server is running on port 8080")
@@ -22,8 +26,6 @@ app.get("/", (req, res) => {
 
 app.post("/", bodyParser.json(), (req, res) => {
     const userResponse = req.body.user_response;
-    let responseStrategy = new ResponseStrategy();
-    let userInputParser = new UserInputParser();
     let responseKeywords = userInputParser.parseUserInput(userResponse)
     let botResponse = new BotAnswer();
     let response = responseStrategy.getResponseType(responseKeywords);
@@ -45,3 +47,8 @@ app.post("/", bodyParser.json(), (req, res) => {
     res.json({bot_response: botResponse})
 })
 
+app.post("/reset", bodyParser.json(), (req, res) => {
+    questManager.availableQuests = questManager.instantiateQuests();
+    conversation.requestCount = 0;
+    res.json({bot_response: "Reset successful"})
+    })
