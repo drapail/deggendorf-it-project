@@ -1,0 +1,25 @@
+{
+  "INTRO": {
+    "TEXT": "You, a stalwart knight from the village of Thistledown, find yourself on a rocky peak overlooking a land charred by dragon fire. A local tale speaks of Smolderwing, the dreaded dragon, known for its fiery breath and relentless fury. It is said that Smolderwing sits on a treasure horde that can make kingdoms tremble with envy."
+  },
+  "FIGHT": {
+    "TEXT": "Gritting your teeth, you draw your trusty sword and charge at Smolderwing. The dragon roars, a blaze of fire spewing forth, but you deftly dodge. Sparks fly as your sword clashes against the dragon's scales, lighting up the battlefield with their fiery glow.",
+    "HISTORY": "fought against Smolderwing"
+  },
+  "HIDE": {
+    "TEXT": "Moving with utmost caution, you manage to blend with the ashen environment, observing Smolderwing from a safe distance. The majestic beast snarls, smoke curling from its nostrils, oblivious to your presence as you strategize your next move.",
+    "HISTORY": "hid and observed Smolderwing"
+  },
+  "NEGOTIATE": {
+    "TEXT": "With bravery that surpasses many, you step forward, announcing your presence to the dragon. Your voice, confident and steady, resonates in the scorched expanse as you propose a negotiation, hoping to reach an agreement and end the dragon's reign of terror.",
+    "HISTORY": "attempted to negotiate with Smolderwing"
+  },
+  "ESCAPE": {
+    "TEXT": "With the sight of the dragon's mighty form and the surrounding destruction, a wave of discretion sweeps over you. Swiftly you retreat, maneuvering skillfully through the treacherous terrain, leaving the dragon's lair and the promise of treasure behind for now.",
+    "HISTORY": "escaped from Smolderwing's territory"
+  },
+  "NOTHING": {
+    "TEXT": "You neither advance nor retreat, standing your ground as you observe the dragon. You assess the beast's power, your mind analyzing and planning. The air is thick with tension as the silence stretches between you and Smolderwing.",
+    "HISTORY": "remained still, assessing Smolderwing"
+  }
+}

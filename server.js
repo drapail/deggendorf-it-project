@@ -55,5 +55,5 @@ app.post("/reset", bodyParser.json(), (req, res) => {
     })
 
 app.post("/stats", bodyParser.json(), (req, res) => {
-    res.json({bot_response: questManager.getCompletedQuests()})
+    res.json({bot_response: questManager.getCompletedQuests().join("")})
 })

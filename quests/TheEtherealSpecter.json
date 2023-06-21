@@ -1,0 +1,25 @@
+{
+  "INTRO": {
+    "TEXT": "During your travels, you, a valiant knight from the modest village of Thistledown, venture into the haunted Moors of Myr. The ghostly wails that echo across the mist-covered moors tell the tale of the Ethereal Specter, a lost spirit bound to these lands by a curse."
+  },
+  "FIGHT": {
+    "TEXT": "You unhesitatingly unsheathe your sword and with a brave heart, charge towards the Specter. The air turns frosty as the Specter wails, fading and appearing in different places. Your sword swings through it, an eerie chill following each stroke.",
+    "HISTORY": "fought the Ethereal Specter"
+  },
+  "HIDE": {
+    "TEXT": "Using the thick fog as a cover, you stay hidden, quietly observing the Specter. It drifts aimlessly, a translucent figure in the bleak landscape, unaware of your watchful gaze as you gather information and plan your next move.",
+    "HISTORY": "hid and studied the Specter"
+  },
+  "NEGOTIATE": {
+    "TEXT": "Mustering your courage, you call out to the Specter, your voice echoing across the desolate moor. You strive to understand its pain, promising to help break its curse and bring it the peace it has been denied for so long.",
+    "HISTORY": "attempted to negotiate with the Specter"
+  },
+  "ESCAPE": {
+    "TEXT": "Feeling a chilling presence seep into your bones, you decide to retreat. The spectral wails fill the air as you navigate the misty terrain, leaving behind the haunting figure and the sorrow-filled moor.",
+    "HISTORY": "escaped from the haunted moor"
+  },
+  "NOTHING": {
+    "TEXT": "You hold your position, neither provoking the Specter nor retreating. You watch the sorrowful apparition drift aimlessly, the silence of the moor broken only by the spectral wails, as you stand in solemn contemplation.",
+    "HISTORY": "remained passive in the Specter's presence"
+  }
+}

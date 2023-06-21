@@ -1,0 +1,25 @@
+{
+  "INTRO": {
+    "TEXT": "As the sun begins to set on the horizon, painting the sky with hues of red and orange, you, brave knight from the humble village of Thistledown, find yourself standing at the edge of a dense, shadowy forest. A chilling howl echoes through the twilight, freezing your blood. From the forest emerges a figure, a large, hulking beast, known to many as Grendel. A creature of nightmares, Grendel has been terrorizing nearby villages, leaving a trail of destruction in his wake."
+  },
+  "FIGHT": {
+    "TEXT": "With a heart pounding in your chest like a war drum, you step forward, drawing your sword. The steel gleams ominously under the dying light of the day. You face Grendel, the beast's red eyes focusing on you, its fierce growl echoing through the quieting forest.",
+    "HISTORY": "faced Grendel in direct combat"
+  },
+  "HIDE": {
+    "TEXT": "You retreat silently into the bushes, watching the beast from the safety of your hiding spot. You move with the shadows, merging with the forest as you maintain a careful distance from the terror that is Grendel.",
+    "HISTORY": "hid and observed the beast"
+  },
+  "NEGOTIATE": {
+    "TEXT": "Swallowing down the lump of fear in your throat, you step forward, hands up in a non-threatening gesture. Your voice carries through the stillness of the forest as you attempt to reason with Grendel, hoping to put an end to the senseless violence.",
+    "HISTORY": "attempted to negotiate with Grendel"
+  },
+  "ESCAPE": {
+    "TEXT": "You feel a cold dread seeping into your bones as you glance at Grendel. The thought of battling such a beast chills you to the core. Turning on your heels, you decide to live to fight another day. With the crunching of leaves underfoot and the echoing roars of the beast fading behind you, you run.",
+    "HISTORY": "fled from the encounter"
+  },
+  "NOTHING": {
+    "TEXT": "You stand your ground, not moving a muscle. The beast circles you, its threatening growls vibrating through the still air. You meet its gaze, neither provoking it to attack nor making any attempt to leave. The standoff continues, the tension between man and beast rising with each passing second.",
+    "HISTORY": "maintained a standoff with Grendel"
+  }
+}

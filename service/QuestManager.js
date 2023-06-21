@@ -21,7 +21,6 @@ class QuestManager {
 
     getRandomQuest() {
         let randomQuest = this.availableQuests[Math.floor(Math.random() * this.availableQuests.length)];
-        this.completedQuests.push(this.availableQuests.find(quest => quest === randomQuest))
         this.availableQuests = this.availableQuests.filter((quest) => quest !== randomQuest);
         return randomQuest;
     }
@@ -29,13 +28,14 @@ class QuestManager {
     getQuestIntro(questPath) {
         let fileContent = fs.readFileSync(questPath, 'utf8');
         let jsonData = JSON.parse(fileContent);
-        return jsonData["INTRO"];
+        return jsonData["INTRO"]["TEXT"];
     }
 
     getQuestAction(questPath, action) {
         let fileContent = fs.readFileSync(questPath, 'utf8');
         let jsonData = JSON.parse(fileContent);
-        return jsonData[action];
+        this.completedQuests.push(jsonData[action]["HISTORY"], ", ")
+        return jsonData[action]["TEXT"];
     }
 
     setCurrentQuest(quest) {
