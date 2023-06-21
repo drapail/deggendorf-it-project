@@ -49,6 +49,11 @@ app.post("/", bodyParser.json(), (req, res) => {
 
 app.post("/reset", bodyParser.json(), (req, res) => {
     questManager.availableQuests = questManager.instantiateQuests();
+    questManager.completedQuests = [];
     conversation.requestCount = 0;
     res.json({bot_response: "Reset successful"})
     })
+
+app.post("/stats", bodyParser.json(), (req, res) => {
+    res.json({bot_response: questManager.getCompletedQuests()})
+})

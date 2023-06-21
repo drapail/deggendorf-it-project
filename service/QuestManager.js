@@ -5,6 +5,7 @@ class QuestManager {
     constructor() {
         this.availableQuests = this.instantiateQuests();
         this.currentQuest = null;
+        this.completedQuests = [];
     }
 
 
@@ -20,6 +21,7 @@ class QuestManager {
 
     getRandomQuest() {
         let randomQuest = this.availableQuests[Math.floor(Math.random() * this.availableQuests.length)];
+        this.completedQuests.push(this.availableQuests.find(quest => quest === randomQuest))
         this.availableQuests = this.availableQuests.filter((quest) => quest !== randomQuest);
         return randomQuest;
     }
@@ -44,9 +46,10 @@ class QuestManager {
         return this.currentQuest;
     }
 
-    resetCurrentQuest() {
-        this.currentQuest = null;
+    getCompletedQuests() {
+        return this.completedQuests;
     }
+
 }
 
 module.exports = QuestManager;
