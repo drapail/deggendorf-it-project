@@ -1,11 +1,13 @@
 const BaseResponse = require("../BaseResponse")
+const KeywordsFileReader = require("../../service/KeywordsFileReader")
 
 class EscapeResponse extends BaseResponse {
     getKeywords() {
-        return ['ESCAPE', 'RUN', 'FLEE', 'LEAVE', 'EXIT', 'OUT', 'AWAY', 'MOVE'];
+        const reader = new KeywordsFileReader('responseTypes/keywords/EscapeKeywords.txt');
+        return reader.getKeywords();
     }
 
-    getAnswer(userResponse) {
+    getQuestActionKeyword(userResponse) {
         return `ESCAPE`;
     }
 }

@@ -1,0 +1,25 @@
+{
+  "INTRO": {
+    "TEXT": "In your pursuit of fame and fortune, you, brave knight from Thistledown, have entered the lost city of Marbeldon, where legend tells of a gorgon who can turn all who gaze upon her into stone. As you tread the cobblestone streets lined with the stone figures of unfortunate adventurers, the chilling reality of the legend grips you."
+  },
+  "FIGHT": {
+    "TEXT": "With an unwavering spirit, you draw your sword and step towards the ominous gorgon. As you catch sight of her, you use your polished shield to look at her reflection. A battle of epic proportions ensues as you pit your courage against her cursed gaze.",
+    "HISTORY": "engaged the gorgon in battle"
+  },
+  "HIDE": {
+    "TEXT": "You find a safe corner in the ruins of the city, careful to avoid the gorgon's deadly gaze. Hidden behind a crumbled wall, you spy on the gorgon, learning her movements and understanding her powers, as you make plans for a potential encounter.",
+    "HISTORY": "hid and studied the gorgon"
+  },
+  "NEGOTIATE": {
+    "TEXT": "Despite the risk, you step forward, your intentions peaceful. You call out to the gorgon, your voice echoing through the stone city. Your words carry a message of truce, seeking to end the gorgon's reign of terror and negotiate a peaceful resolution.",
+    "HISTORY": "tried to negotiate with the gorgon"
+  },
+  "ESCAPE": {
+    "TEXT": "Seeing the numerous stone figures strewn across the city, you feel a cold dread take hold. The thought of becoming another silent witness to the gorgon's curse is too much to bear. Deciding that discretion is the better part of valor, you make a swift retreat, vowing to return when better prepared.",
+    "HISTORY": "escaped from the lost city"
+  },
+  "NOTHING": {
+    "TEXT": "You stand at a distance, observing the gorgon from afar. You neither engage her, nor do you hide or flee. The moment extends, a silent standoff between man and mythical beast, as you weigh your options, ready to act at a moment's notice.",
+    "HISTORY": "kept a careful watch on the gorgon"
+  }
+}

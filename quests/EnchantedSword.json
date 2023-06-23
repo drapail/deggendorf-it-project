@@ -1,0 +1,25 @@
+{
+  "INTRO": {
+    "TEXT": "In the old ruins of the castle, forgotten by time, you, a courageous knight from the secluded village of Thistledown, find an enigmatic sword radiating a strange glow. Legend says it belongs to the ancient hero, Ecthar, who mysteriously vanished, leaving only his sword behind. The sword is said to be sentient, capable of judging those who dare to touch it."
+  },
+  "FIGHT": {
+    "TEXT": "As you unsheath your sword, a sudden force emanates from the glowing sword, casting a form of an ancient warrior. You engage in a fierce battle with the apparition, testing your skills against a formidable foe.",
+    "HISTORY": "battled with the sword's spirit"
+  },
+  "HIDE": {
+    "TEXT": "You cautiously recede into the shadows of the ruined castle, quietly observing the mysterious sword. A spectral warrior emerges from the sword, his ancient eyes scanning the room for any presence. You remain unseen, studying the ethereal figure from your cover.",
+    "HISTORY": "watched the spirit from hiding"
+  },
+  "NEGOTIATE": {
+    "TEXT": "Standing in front of the glowing sword, you extend your hand in peace. You address the spirit of Ecthar, seeking his guidance and the secrets he holds. A spectral figure materializes, regarding you with a gaze that has seen centuries of battles.",
+    "HISTORY": "spoke to the spirit of Ecthar"
+  },
+  "ESCAPE": {
+    "TEXT": "You decide not to meddle with the legends and ancient enchantments. Sensing the dormant power within the sword, you retreat, leaving the castle ruins and its secrets untouched. The echoes of the past fade away as you distance yourself.",
+    "HISTORY": "escaped from the enchanted sword"
+  },
+  "NOTHING": {
+    "TEXT": "You stand in the ancient ruin, neither approaching the sword nor retreating. You simply observe the enchanting aura of the weapon, its pulsating glow filling the room. You stand in contemplation, allowing the energy of the room to wash over you.",
+    "HISTORY": "contemplated the sword's power"
+  }
+}

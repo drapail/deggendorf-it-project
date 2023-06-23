@@ -1,0 +1,25 @@
+{
+  "INTRO": {
+    "TEXT": "Venturing into the heart of the Misty Forest, you feel an unnerving sense of being watched. The village elders have warned you of a colossal troll that has taken residence in these woods, terrorizing travelers and villagers alike."
+  },
+  "FIGHT": {
+    "TEXT": "Your heart beats with the rhythm of battle as you decide to confront the troll. You draw your sword, its blade glinting menacingly in the dappled sunlight, and charge towards the monstrous creature lurking in the forest depths.",
+    "HISTORY": "confronted the colossal troll"
+  },
+  "HIDE": {
+    "TEXT": "Stealth is your ally as you quietly navigate the dense foliage, evading the troll’s notice. Every rustle of the leaves, every snap of a twig under your careful tread echoes through the silence of the forest.",
+    "HISTORY": "evaded the forest troll"
+  },
+  "NEGOTIATE": {
+    "TEXT": "In an unconventional move, you decide to parley with the troll. You cautiously approach the creature, using gestures and soft words, hoping to communicate your peaceful intentions and convince it to leave the villagers in peace.",
+    "HISTORY": "parleyed with the forest troll"
+  },
+  "ESCAPE": {
+    "TEXT": "Upon sighting the troll, a monstrous behemoth of muscle and fury, you decide to make a hasty retreat. The echoes of the troll's roars follow you as you sprint through the undergrowth, escaping back to the safety of the village.",
+    "HISTORY": "escaped from the troll's territory"
+  },
+  "NOTHING": {
+    "TEXT": "You choose to watch and wait, observing the troll's behavior from a safe distance. The troll, oblivious to your presence, continues its daily routine, providing you with valuable insight into its habits and patterns.",
+    "HISTORY": "observed the troll's habits"
+  }
+}

@@ -1,11 +1,13 @@
 const BaseResponse = require("../BaseResponse")
+const KeywordsFileReader = require("../../service/KeywordsFileReader");
 
 class HideResponse extends BaseResponse {
     getKeywords() {
-        return ['HIDE', 'COVER', 'DISAPPEAR', 'BEHIND'];
+        const reader = new KeywordsFileReader('responseTypes/keywords/HideKeywords.txt');
+        return reader.getKeywords();
     }
 
-    getAnswer(userResponse) {
+    getQuestActionKeyword(userResponse) {
         return `HIDE`;
     }
 }

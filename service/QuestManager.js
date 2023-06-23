@@ -5,6 +5,7 @@ class QuestManager {
     constructor() {
         this.availableQuests = this.instantiateQuests();
         this.currentQuest = null;
+        this.completedQuests = [];
     }
 
 
@@ -27,13 +28,14 @@ class QuestManager {
     getQuestIntro(questPath) {
         let fileContent = fs.readFileSync(questPath, 'utf8');
         let jsonData = JSON.parse(fileContent);
-        return jsonData["INTRO"];
+        return jsonData["INTRO"]["TEXT"];
     }
 
     getQuestAction(questPath, action) {
         let fileContent = fs.readFileSync(questPath, 'utf8');
         let jsonData = JSON.parse(fileContent);
-        return jsonData[action];
+        this.completedQuests.push(jsonData[action]["HISTORY"], ", ")
+        return jsonData[action]["TEXT"];
     }
 
     setCurrentQuest(quest) {
@@ -44,9 +46,10 @@ class QuestManager {
         return this.currentQuest;
     }
 
-    resetCurrentQuest() {
-        this.currentQuest = null;
+    getCompletedQuests() {
+        return this.completedQuests;
     }
+
 }
 
 module.exports = QuestManager;

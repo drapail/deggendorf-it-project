@@ -1,0 +1,25 @@
+{
+  "INTRO": {
+    "TEXT": "You descend into the damp darkness of the Deepgrove Caverns. Rumors in the nearby village tell of a troublesome Goblin King who has been orchestrating raids from these very tunnels. The deeper you venture, the more the echoing cackles and clinking of stolen goods fill your ears."
+  },
+  "FIGHT": {
+    "TEXT": "You, a knight of unwavering courage, decide to confront the Goblin King head-on. Your steel sword sings as it clashes with the King's crudely fashioned club, sending sparks flying in the dark caverns.",
+    "HISTORY": "clashed with the Goblin King"
+  },
+  "HIDE": {
+    "TEXT": "Choosing to stay out of sight, you skillfully navigate through the shadowy maze of the caverns. The sound of goblin chatter gets louder, and you quietly observe their routines from the darkness, planning your next move.",
+    "HISTORY": "observed the goblins in secrecy"
+  },
+  "NEGOTIATE": {
+    "TEXT": "Believing in the power of diplomacy, you approach the Goblin King with a proposition. You assure him of the villagers' willingness to trade with his kind, replacing thievery with peaceful commerce.",
+    "HISTORY": "proposed peace to the Goblin King"
+  },
+  "ESCAPE": {
+    "TEXT": "Feeling the odds stacked against you in the heart of the goblin territory, you decide to retreat. The echoes of your hasty footsteps mingle with the goblins' surprised shouts as you navigate your way back to the surface.",
+    "HISTORY": "retreated from the Goblin King"
+  },
+  "NOTHING": {
+    "TEXT": "You decide to stay put and assess the situation. You observe the goblins from a safe distance, taking in their routines and the layout of the caves. As the echoes of their raucous laughter die down, you plan your next move.",
+    "HISTORY": "scouted the Goblin King's territory"
+  }
+}

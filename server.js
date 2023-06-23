@@ -5,8 +5,14 @@ const ResponseStrategy = require("./service/ResponseStrategy");
 const Conversation = require("./model/Conversation");
 const UserInputParser = require("./service/UserInputParser")
 const QuestManager = require("./service/QuestManager")
+const BaseResponse = require("./responseTypes/BaseResponse");
+const BotAnswer = require("./model/BotAnswer");
+
 const conversation = new Conversation();
 const questManager = new QuestManager();
+const responseStrategy = new ResponseStrategy();
+const userInputParser = new UserInputParser();
+
 
 app.listen(8080, () => {
     console.log("Server is running on port 8080")
@@ -20,22 +26,34 @@ app.get("/", (req, res) => {
 
 app.post("/", bodyParser.json(), (req, res) => {
     const userResponse = req.body.user_response;
-    let responseStrategy = new ResponseStrategy();
-    let userInputParser = new UserInputParser();
     let responseKeywords = userInputParser.parseUserInput(userResponse)
-    let botResponse;
-    let randomQuestPath;
+    let botResponse = new BotAnswer();
+    let response = responseStrategy.getResponseType(responseKeywords);
+    let randomQuestPath = questManager.getRandomQuest();
 
     if (conversation.requestCount === 0) {
-        let randomQuestPath = questManager.getRandomQuest();
         questManager.setCurrentQuest(randomQuestPath)
-        botResponse = questManager.getQuestIntro(randomQuestPath);
+        botResponse.questIntro = questManager.getQuestIntro(randomQuestPath);
+        conversation.requestCount++;
     } else if (conversation.requestCount >= 1) {
-        let response = responseStrategy.getResponseType(responseKeywords);
-        let action = response.getAnswer(responseKeywords)
-        botResponse = questManager.getQuestAction(questManager.getCurrentQuest(), action);
+        if (response.constructor === BaseResponse) {
+            botResponse.questResponse = response.getQuestActionKeyword(responseKeywords);
+        } else {
+            botResponse.questResponse = questManager.getQuestAction(questManager.getCurrentQuest(), response.getQuestActionKeyword(responseKeywords));
+            botResponse.questIntro = questManager.getQuestIntro(randomQuestPath);
+            conversation.requestCount = 0;
+        }
     }
-    conversation.requestCount++;
     res.json({bot_response: botResponse})
 })
 
+app.post("/reset", bodyParser.json(), (req, res) => {
+    questManager.availableQuests = questManager.instantiateQuests();
+    questManager.completedQuests = [];
+    conversation.requestCount = 0;
+    res.json({bot_response: "Reset successful"})
+    })
+
+app.post("/stats", bodyParser.json(), (req, res) => {
+    res.json({bot_response: questManager.getCompletedQuests().join("")})
+})
