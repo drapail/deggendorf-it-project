@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+<script>
+    var socket = io.connect('http://localhost:8080', { transports: ['websocket'] });
+
+    socket.on('connect', function() {
+        console.log('Connected to server');
+    });
+
+    // Listen to 'message' events from the server
+    socket.on('message', function (data) {
+        console.log('Received message from server:', data);
+    });
+
+    // Send a message to the server
+    function sendMessage(route, userResponse) {
+        socket.emit('message', {route: route, user_response: userResponse});
+    }
+
+    // For example, you can call this function to send a message to the base route
+    sendMessage('/', 'Hello from client');
+</script>
+</body>
+</html>

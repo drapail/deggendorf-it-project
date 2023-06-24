@@ -1,5 +1,6 @@
 const express = require('express');
-const app = express();
+const http = require('http');
+const socketIo = require('socket.io');
 const bodyParser = require("body-parser");
 const ResponseStrategy = require("./service/ResponseStrategy");
 const Conversation = require("./model/Conversation");
@@ -13,19 +14,19 @@ const questManager = new QuestManager();
 const responseStrategy = new ResponseStrategy();
 const userInputParser = new UserInputParser();
 
-
-app.listen(8080, () => {
-    console.log("Server is running on port 8080")
-})
-
-
-app.get("/", (req, res) => {
-    res.send("Hello world")
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server, {
+    transports: ['websocket'],
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"],
+        allowedHeaders: ["my-custom-header"],
+        credentials: true
+    }
 });
 
-
-app.post("/", bodyParser.json(), (req, res) => {
-    const userResponse = req.body.user_response;
+const handleBaseRoute = (socket, userResponse) => {
     let responseKeywords = userInputParser.parseUserInput(userResponse)
     let botResponse = new BotAnswer();
     let response = responseStrategy.getResponseType(responseKeywords);
@@ -44,16 +45,38 @@ app.post("/", bodyParser.json(), (req, res) => {
             conversation.requestCount = 0;
         }
     }
-    res.json({bot_response: botResponse})
-})
+    socket.emit('message', {bot_response: botResponse});
+}
 
-app.post("/reset", bodyParser.json(), (req, res) => {
+const handleResetRoute = (socket) => {
     questManager.availableQuests = questManager.instantiateQuests();
     questManager.completedQuests = [];
     conversation.requestCount = 0;
-    res.json({bot_response: "Reset successful"})
-    })
+    socket.emit('message', {bot_response: "Reset successful"});
+}
 
-app.post("/stats", bodyParser.json(), (req, res) => {
-    res.json({bot_response: questManager.getCompletedQuests().join("")})
-})
+const handleStatsRoute = (socket) => {
+    socket.emit('message', {bot_response: questManager.getCompletedQuests().join("")});
+}
+
+io.on('connection', (socket) => {
+    console.log('A client connected');
+
+    socket.on('message', (data) => {
+        if(data.route === "/") {
+            handleBaseRoute(socket, data.user_response);
+        } else if(data.route === "/reset") {
+            handleResetRoute(socket);
+        } else if(data.route === "/stats") {
+            handleStatsRoute(socket);
+        }
+    });
+
+    socket.on('disconnect', () => {
+        console.log('A client disconnected');
+    });
+});
+
+server.listen(8080, () => {
+    console.log("Server is running on port 8080");
+});
